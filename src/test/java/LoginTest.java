@@ -2,12 +2,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class LoginTest {
 
-    WebDriver driver = new ChromeDriver();
-    LoginPage loginPage = new LoginPage(driver);
+    WebDriver driver;
+    LoginPage loginPage;
+
+    @BeforeTest
+    public void setUp() {
+//        ChromeOptions options = new ChromeOptions();
+//        options.addArguments("--headless");
+        driver = new ChromeDriver();
+        loginPage = new LoginPage(driver);
+    }
 
     @Test
     public void validLogin(){
