@@ -25,6 +25,7 @@ public class LoginTest {
         loginPage.waitForElement(By.id("userEmail"));
         loginPage.setLogin("johnd@email.com", "John@123");
         System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
         driver.quit();
     }
 
